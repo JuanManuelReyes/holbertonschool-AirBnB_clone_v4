@@ -13,7 +13,7 @@ $(document).ready(function () {
 	let checkedAmenities = {};
 	$("input[type=checkbox]").change(function () {
 	if ($(this).prop("checked")) {
-		idAmenity.push((this).data("id"))
+		idAmenity.push($(this).data("id"))
 		console.log("aaaayuda", idAmenity)
 	  } else {
 		idAmenity.splice(idAmenity.indexOf($(this).data("id"), 1));
