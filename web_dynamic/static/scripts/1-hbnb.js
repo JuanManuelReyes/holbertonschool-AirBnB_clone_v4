@@ -1,5 +1,4 @@
-const idAmenity = {};
-
+const idAmenity = [];
 
 // $(document).ready(function() {
 // 	$("input[type=checkbox]").change(function(){
@@ -14,11 +13,11 @@ $(document).ready(function () {
 	let checkedAmenities = {};
 	$("input[type=checkbox]").change(function () {
 	if ($(this).prop("checked")) {
-		idAmenity[$(this).data('id')] = $(this).data('name');
+		idAmenity.push((this).data("id"))
 		console.log("aaaayuda", idAmenity)
 	  } else {
-		delete idAmenity[$(this).data('id')];
-		console.log("chauu")
+		idAmenity.splice(idAmenity.indexOf($(this).data("id"), 1));
+		console.log("chauu", idAmenity)
 	  }
 	});
   });
