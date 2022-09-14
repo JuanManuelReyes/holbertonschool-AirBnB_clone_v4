@@ -6,7 +6,7 @@ $( document ).ready(function() {
 			console.log("holaaa")
 		}
 		else{
-			idAmenity.empty()
+			// idAmenity.empty()
 		}
 	})
 })
