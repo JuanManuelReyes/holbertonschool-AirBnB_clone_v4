@@ -3,11 +3,11 @@ const idAmenity = {};
 $(document).ready(function () {
 	$("input[type=checkbox]").change(function () {
 	if ($(this).prop("checked")) {
-		// AÑADIMOS EL ID DEL AMENITY CAMBIADO A LA LISTA
+		// AÑADIMOS EL ID DEL AMENITY CAMBIADO A LA LISTA, KEY VALUE
 		idAmenity[$(this).attr("data-id")] = $(this).attr("data-name");
 		// console.log("aaaayuda", idAmenity)
 	  } else {
-		// ELIMINAMOS EL ELEMENTO ESPECIFICO QUE FUE AÑADIDO POR POSITION
+		// ELIMINAMOS POR CLAVE, ID DEL AMENITY
 		delete idAmenity[$(this).attr('data-id')];
 	  }
 		//SI NUESTRA LISTA RESULTA ESTAR VACÍA REMPLAZAMOS CON ESPACIO VACÍO   
