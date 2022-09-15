@@ -4,7 +4,7 @@ $(document).ready(function () {
 	$("input[type=checkbox]").change(function () {
 	if ($(this).prop("checked")) {
 		// AÑADIMOS EL ID DEL AMENITY CAMBIADO A LA LISTA
-		idAmenity.push($(this).data("id"));
+		idAmenity.push($(this).data("name"));
 		// console.log("aaaayuda", idAmenity)
 	  } else {
 		// ELIMINAMOS EL ELEMENTO ESPECIFICO QUE FUE AÑADIDO POR POSITION
