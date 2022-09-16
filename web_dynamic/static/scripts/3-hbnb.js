@@ -1,4 +1,4 @@
-const idAmenity = {};
+// const idAmenity = {};
 
 $(document).ready(function () {
 	$("input[type=checkbox]").change(function () {
@@ -18,15 +18,38 @@ $(document).ready(function () {
 		$("div.amenities h4").text(Object.values(idAmenity).join(', '));
 	  }
 	});
-    $.getJSON('http://127.0.0.1:5001/api/v1/status', function (data) {
+    $.getJSON('http://0.0.0.0:5001/api/v1/status', function (data) {
       if (data.status === 'OK') {
           $('#api_status').addClass('available')
         } else {
           $('#api_status').removeClass('available')
         }
-		// AÑADIDO SOBRE EL 2 HBNB JS
-		// $.getJSON('http://127.0.0.1:5001/api/v1/status', function (data) {
-		
-	// });
-  })
+  	});
+
+  $.ajax({
+	type: "POST",
+	url: "http://0.0.0.0:5001/api/v1/places_search/",
+	data: "{}",
+	dataType: "json",
+	contentType: "application/json",
+	success: function(data){
+		for(let i = 0; i < data.length; i++){
+			$("section.places").append(`
+				<article>
+				<div class="title_box">
+				  <h2>${data[i].name}</h2>
+				  <div class="price_by_night">${data[i].price_by_night}</div>
+				</div>
+				<div class="information">
+				  <div class="max_guest"> ${data[i].max_guest} Guest</div>
+					  <div class="number_rooms"> ${data[i].number_rooms} Bedrooms</div>
+					  <div class="number_bathrooms"> ${data[i].number_bathrooms} Bathrooms</div>
+				</div>
+				<div class="user">
+				</div>
+					<div class="description">${data[i].description}</div>
+				</article>`);
+		}
+	}
+  });
 });
