@@ -1,4 +1,4 @@
-const idAmenity = {};
+//const idAmenity = {};
 
 $(document).ready(function () {
 	$("input[type=checkbox]").change(function () {
