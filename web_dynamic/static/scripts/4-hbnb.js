@@ -52,7 +52,7 @@ $(document).ready(function () {
 		}
 	}
   });
-  //TASK 5
+  
   $(':button').click(function () {
 	$("article").remove();
 	$.ajax({
@@ -63,7 +63,7 @@ $(document).ready(function () {
 		contentType: "application/json",
 		success: function(data){
 			for(let i = 0; i < data.length; i++){
-				$("section.places").append(
+				$("section.places").append(`
 					<article>
 					<div class="title_box">
 					  <h2>${data[i].name}</h2>
@@ -77,8 +77,13 @@ $(document).ready(function () {
 					<div class="user">
 					</div>
 						<div class="description">${data[i].description}</div>
-					</article>);
+					</article>`);
 			}
 		}
 	}   
+	console.log(Object.keys(idAmenity));
+});
+
+
+
 });
