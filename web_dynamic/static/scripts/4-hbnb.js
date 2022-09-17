@@ -58,7 +58,7 @@ $(document).ready(function () {
 		$.ajax({
 			type: "POST",
 			url: "http://7924235ac644.41bfe450.hbtn-cod.io:5001/api/v1/places_search/",
-			data: JSON.stringify({ amenities: (Object.keys(idAmenity)}),
+			data: JSON.stringify({ amenities: (Object.keys(idAmenity))}),
 			dataType: "json",
 			contentType: "application/json",
 			success: function (data) {
@@ -80,8 +80,8 @@ $(document).ready(function () {
 					</article>`);
 				}
 			}
-		},   
-	console.log(Object.keys(idAmenity));
+		})
+		console.log(Object.keys(idAmenity));
 	});
 
 
