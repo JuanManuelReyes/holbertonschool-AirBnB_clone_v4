@@ -58,7 +58,7 @@ $(document).ready(function () {
 	$.ajax({
 		type: "POST",
 		url: "http://856a58936b7e.e8b08b41.hbtn-cod.io:5001/api/v1/places_search/",
-		data: JSON.stringify({amenities: { idAmenity }}),
+		data: JSON.stringify({amenities: (Object.keys(idAmenity)}),
 		dataType: "json",
 		contentType: "application/json",
 		success: function(data){
