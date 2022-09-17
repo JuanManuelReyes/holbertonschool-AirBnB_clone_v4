@@ -73,7 +73,7 @@ $(document).ready(function () {
 		$("div.amenities h4").text(Object.values(idAmenity).join(', '));
 	  }
 	});
-    $.getJSON('http://0.0.0.0:5001/api/v1/status', function (data) {
+    $.getJSON('http://856a58936b7e.e8b08b41.hbtn-cod.io:5001/api/v1/status', function (data) {
       if (data.status === 'OK') {
           $('#api_status').addClass('available')
         } else {
@@ -83,7 +83,7 @@ $(document).ready(function () {
 
   $.ajax({
 	type: "POST",
-	url: "http://0.0.0.0:5001/api/v1/places_search/",
+	url: "http://856a58936b7e.e8b08b41.hbtn-cod.io:5001/api/v1/places_search/",
 	data: "{}",
 	dataType: "json",
 	contentType: "application/json",
@@ -112,7 +112,7 @@ $(document).ready(function () {
 	$("article").remove();
 	$.ajax({
 		type: "POST",
-		url: "http://0.0.0.0:5001/api/v1/places_search/",
+		url: "http://856a58936b7e.e8b08b41.hbtn-cod.io:5001/api/v1/places_search/",
 		data: "{}",
 		dataType: "json",
 		contentType: "application/json",
